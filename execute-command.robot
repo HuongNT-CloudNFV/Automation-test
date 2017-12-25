@@ -1,7 +1,5 @@
 *** Settings ***
 Library                SSHLibrary
-Suite Setup            Open Connection And Log In
-Suite Teardown         Close All Connections
 
 *** Variables ***
 ${HOST}                10.15.99.219
