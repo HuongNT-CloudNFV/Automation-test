@@ -6,9 +6,15 @@ ${HOST}                10.15.99.219
 ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
 
+*** Test Cases ***
+Execute Commands
+   Open Connection And execute command
+   Execute command
+
 *** Keywords ***
-execute command
+Open Connection And execute command
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
-   Write    cd /home/ubuntu/robot-test
-   Write    echo `date` >> log.txt
+Execute command
+    Write    cd /home/ubuntu/robot-test
+    Write    echo `date` >> log.txt

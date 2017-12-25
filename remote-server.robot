@@ -1,13 +1,19 @@
 *** Settings ***
 Library                SSHLibrary
+Suite Setup            Open Connection And Log In
+Suite Teardown         Close All Connections
 *** Variables ***
 ${HOST}                10.15.99.219
 ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
-
+*** Test Cases ***
+Remote server
+   Open Connection And Log In
+   Remote and execute command
 *** Keywords ***
-remote server
+Open Connection And Log In
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
-   Write    cd /home/ubuntu/robot-test
-   Write    echo `date` >> log.txt
+Remote and execute command
+    Write    cd /home/ubuntu/robot-test
+    Write    echo `date` >> log.txt
