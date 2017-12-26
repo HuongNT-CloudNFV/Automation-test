@@ -7,7 +7,7 @@ ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
 
 *** Keywords ***
-Remote server
+remote server
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test

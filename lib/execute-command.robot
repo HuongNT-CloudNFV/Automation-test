@@ -7,7 +7,7 @@ ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
 
 *** Keywords ***
-Execute Commands
+execute command
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test
