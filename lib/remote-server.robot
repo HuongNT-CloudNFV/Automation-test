@@ -6,8 +6,12 @@ ${HOST}                10.15.99.219
 ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
 
-*** Keywords ***
+*** Test Cases ***
 remote server
+   Open connection to remote server
+
+*** Keywords ***
+Open connection to remote server
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test
