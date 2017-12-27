@@ -6,7 +6,7 @@ ${HOST}                10.15.99.219
 ${USERNAME}            ubuntu
 ${PASSWORD}            ssdc123!
 
-*** Test Cases ***
+*** Keyword ***
 execute command
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
