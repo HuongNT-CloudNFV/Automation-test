@@ -2,9 +2,9 @@
 Library                SSHLibrary
 
 *** Variables ***
-${HOST}                10.15.99.219
+${HOST}                10.15.7.175
 ${USERNAME}            ubuntu
-${PASSWORD}            ssdc123!
+${PASSWORD}            123
 
 *** Keywords ***
 test case5
