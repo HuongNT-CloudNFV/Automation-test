@@ -7,7 +7,7 @@ ${USERNAME}            ubuntu
 ${PASSWORD}            123
 
 *** Keywords ***
-remote server
+test case6
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test
