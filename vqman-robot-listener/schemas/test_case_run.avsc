@@ -1,0 +1,44 @@
+{
+  "name": "test_case_run",
+  "type": "record",
+  "doc": "Schema for Test Case's events",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "ID of record in test_case_run table"
+    }, {
+      "name": "start_time",
+      "type": ["null", "string"],
+      "default": null,
+      "logicalType": "timestamp-millis",
+      "doc": "Test Case start datetime"
+    }, {
+      "name": "end_time",
+      "type": ["null", "string"],
+      "default": null,
+      "logicalType": "timestamp-millis",
+      "doc": "Test Case end datetime"
+    }, {
+      "name": "total_time",
+      "type": "long",
+      "default": 0,
+      "doc": "Test Case total running time"
+    }, {
+      "name": "test_result",
+      "type": "int",
+      "default": 0,
+      "doc": "Test Case's result: 0 - Untest, 1 - Pass, 2 - Fail"
+    }, {
+      "name": "message",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Test message"
+    }, {
+      "name": "execution_status",
+      "type": "int",
+      "default": 1,
+      "doc": "Test result status: 0 - Not run, 1 - Running, 2 - Done"
+    }
+  ]
+}

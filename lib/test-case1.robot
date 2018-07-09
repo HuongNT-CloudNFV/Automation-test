@@ -1,13 +1,8 @@
 *** Settings ***
 Library                SSHLibrary
 
-*** Variables ***
-${HOST}                10.15.7.175
-${USERNAME}            ubuntu
-${PASSWORD}            123
-
 *** Keywords ***
-test case1
+test-case    ${HOST}   ${USERNAME}    ${PASSWORD}
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test

@@ -1,0 +1,44 @@
+{
+  "name": "test_suite_run",
+  "type": "record",
+  "doc": "Schema for Test Suite's events",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long",
+      "doc": "ID of record in test_suite_run table"
+    }, {
+      "name": "start_time",
+      "type": ["null", "string"],
+      "default": null,
+      "logicalType": "timestamp-millis",
+      "doc": "Test Suite start datetime"
+    }, {
+      "name": "end_time",
+      "type": ["null", "string"],
+      "default": null,
+      "logicalType": "timestamp-millis",
+      "doc": "Test Suite end datetime"
+    }, {
+      "name": "total_time",
+      "type": "long",
+      "default": 0,
+      "doc": "Test Suite total running time"
+    }, {
+      "name": "message",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Test message"
+    }, {
+      "name": "test_result_dir",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Path to directory which stores output files"
+    }, {
+      "name": "execution_status",
+      "type": "int",
+      "default": 1,
+      "doc": "Test result status: 0 - Not run, 1 - Running, 2 - Done"
+    }
+  ]
+}

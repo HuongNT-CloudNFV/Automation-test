@@ -1,0 +1,4 @@
+{
+  "bootstrap.servers": "10.15.7.176:9092",
+  "schema.registry.url": "http://10.15.7.176:8081"
+}
