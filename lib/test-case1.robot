@@ -2,7 +2,7 @@
 Library                SSHLibrary
 
 *** Keywords ***
-test-case    ${HOST}   ${USERNAME}    ${PASSWORD}
+test-case1    ${HOST}   ${USERNAME}    ${PASSWORD}
    Open Connection    ${HOST}
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test
