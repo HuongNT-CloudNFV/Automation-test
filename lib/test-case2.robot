@@ -8,3 +8,4 @@ test-case2
    Login    ${USERNAME}    ${PASSWORD}
    Write    cd /home/ubuntu/robot-test
    Write    echo `date` >> log.txt
+   Sleep    120
