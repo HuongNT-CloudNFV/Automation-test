@@ -56,45 +56,36 @@ class RobotListener:
 			return record
 
 	def start_suite(self, data, result):
-		test_suite_name = data.name
-		if ("test_suite_name" in self.params and str(test_suite_name) == str(self.params["test_suite_name"])):
-			# Send record to Kafka
-			record = self.create_record(id=self.params["test_suite_run_id"],
-										start_time=result.starttime,
-										end_time=result.endtime,
-										total_time=result.elapsedtime,
-										message=result.message,
-										test_result_dir=None,
-										execution_status=1)
+		# Send record to Kafka
+		record = self.create_record(id=self.params["test_suite_run_id"],
+									start_time=result.starttime,
+									end_time=result.endtime,
+									total_time=result.elapsedtime,
+									message=result.message,
+									test_result_dir=None,
+									execution_status=1)
 
-			with open("listener_out.log", "ab") as log_file:
-				log_file.write("--- " + str(record) + "\n")
+		with open("listener_out.log", "ab") as log_file:
+			log_file.write("--- " + str(record) + "\n")
 
-			self.producer.produce(topic=self.TEST_SUITE_TOPIC, schema=self.list_schemas[self.TEST_SUITE_SCHEMA], record=record)
-	
-		else:
-			pass
+		self.producer.produce(topic=self.TEST_SUITE_TOPIC, schema=self.list_schemas[self.TEST_SUITE_SCHEMA], record=record)
 			
 
 	def end_suite(self, data, result):
-		test_suite_name = data.name
-		if ("test_suite_name" in self.params and str(test_suite_name) == str(self.params["test_suite_name"])):
-			# Send record to Kafka
-			record = self.create_record(id=self.params["test_suite_run_id"],
-										start_time=result.starttime,
-										end_time=result.endtime,
-										total_time=result.elapsedtime,
-										message=result.message,
-										test_result_dir=self.output_dir,
-										execution_status=2)
+		# Send record to Kafka
+		record = self.create_record(id=self.params["test_suite_run_id"],
+									start_time=result.starttime,
+									end_time=result.endtime,
+									total_time=result.elapsedtime,
+									message=result.message,
+									test_result_dir=self.output_dir,
+									execution_status=2)
 
-			with open("listener_out.log", "ab") as log_file:
-				log_file.write("--- " + str(record) + "\n")
+		with open("listener_out.log", "ab") as log_file:
+			log_file.write("--- " + str(record) + "\n")
 
-			self.producer.produce(topic=self.TEST_SUITE_TOPIC, schema=self.list_schemas[self.TEST_SUITE_SCHEMA], record=record)
-	
-		else:
-			pass
+		self.producer.produce(topic=self.TEST_SUITE_TOPIC, schema=self.list_schemas[self.TEST_SUITE_SCHEMA], record=record)
+
 
 	def start_test(self, data, result):
 		test_case_name = data.name
